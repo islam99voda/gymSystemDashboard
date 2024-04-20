@@ -111,6 +111,7 @@
 
     @include('admin.Footerscripts')
 
+
     {{-- <script>
     function confirmDelete() {
         return confirm("هل تريد مسح هذا اللاعب؟!");

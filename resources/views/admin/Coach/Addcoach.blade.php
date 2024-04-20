@@ -173,10 +173,10 @@
 
 
 
-    @include('admin.Footer')
 
 
-    @include('admin.Footerscripts')
+
+
 
 
 

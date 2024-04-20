@@ -86,9 +86,9 @@
                     </svg><span class="side-menu__label">Offers</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     {{-- <li><a class="slide-item" href="{{ url('/players/create') . ($page = 'chart-morris') }}">Add Player</a></li> --}}
-                    <li><a class="slide-item" href="{{ url('/coaches/create') }}">Add
+                    <li><a class="slide-item" href="{{ url('/offers/create') }}">Add
                             Offer</a></li>
-                    <li><a class="slide-item" href="{{ url('/coaches') }}">view Offers</a></li>
+                    <li><a class="slide-item" href="{{ url('/offers') }}">view Offers</a></li>
 
                 </ul>
             </li>
@@ -104,9 +104,9 @@
                     </svg><span class="side-menu__label">Products</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
                     {{-- <li><a class="slide-item" href="{{ url('/players/create') . ($page = 'chart-morris') }}">Add Player</a></li> --}}
-                    <li><a class="slide-item" href="{{ url('/coaches/create') }}">Add
+                    <li><a class="slide-item" href="{{ url('/products/create') }}">Add
                             Product</a></li>
-                    <li><a class="slide-item" href="{{ url('/coaches') }}">view Products</a></li>
+                    <li><a class="slide-item" href="{{ url('/products') }}">view Products</a></li>
 
                 </ul>
             </li>

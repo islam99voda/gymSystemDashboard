@@ -27,7 +27,7 @@ class CoachController extends Controller
     public function index()
     {
         $coaches = Coach::get();
-        return view('layouts.Viewcoach', compact('coaches'));
+        return view('admin.Coach.Viewcoach', compact('coaches'));
     }
 
     /**
@@ -75,7 +75,7 @@ class CoachController extends Controller
             DB::commit();
 
             // Redirect the user or return a success response
-            return redirect('Viewcoach');
+            return redirect('coaches');
         } catch (\Exception $e) {
             // Rollback the transaction if any operation fails
             DB::rollback();
@@ -93,7 +93,7 @@ class CoachController extends Controller
     {
 
         $coach = Coach::findOrFail($id);
-        return view('layouts.Showcoach', compact('coach'));
+        return view('admin.Coach.Showcoach', compact('coach'));
     }
 
     /**
@@ -103,7 +103,7 @@ class CoachController extends Controller
     {
         $coach = Coach::findOrFail($id);
 
-        return view('layouts.Editcoach', compact('coach'));
+        return view('admin.Coach.Editcoach', compact('coach'));
     }
 
     /**
@@ -172,7 +172,7 @@ class CoachController extends Controller
             File::delete($filePath);
         }
         $coach->delete();
-        return redirect('Viewcoach');
+        return redirect('admin.Coach.Viewcoach');
     }
 
     public function messages()
