@@ -52,33 +52,43 @@
         <div class="col-md-12">
             <h2 class="text-center"
                 style="font-weight: bolder;background-color: black;color: white; padding: 10px 0px;border-radius: 15px">
-                اضافه لاعب جديد</h2>
+                اضافه اشتراك جديد</h2>
             <hr style="width: 50%;border: solid 3px blue" />
         </div>
 
-        <form method="POST" action="{{ route('winners.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('subscriptions.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="col-md-6">
 
                 <label for=""> اسم اللاعب </label>
                 <select class="form-control" name="player_id" id="">
 
-                    <option value=" ">Select Player</option>
+                    {{-- <option value=" ">Select Player</option>
                     @foreach ($players as $player)
                         <option value="{{ $player->id }}"> {{ $player->namePlayer }}</option>
-                    @endforeach
-
-                </select>
-                <label for=""> اسم البطولة </label>
-                <select class="form-control" name="championship_id[]" id="" multiple="multiple">
-                    <option value=" ">Select Champion</option>
-                    @foreach ($champions as $Champion)
-                        <option value="{{ $Champion->id }}"> {{ $Champion->championName }}</option>
-                    @endforeach
+                    @endforeach --}}
 
                 </select>
 
+                <label for=""> نوع الاشتراك </label>
+                <select class="form-control" name="player_id" id="" name="subscriptionName">
+                    <option value=" "></option>
+                    <option value="0"> شهرى</option>
+                    <option value="0"> سنوى</option>
+                    <option value="0">اختيار عرض </option>
 
+
+                </select>
+                <div>
+                    <label for=""> المبلغ المدفوع</label>
+                    <input type="text" name="paidAmount" class="form-control" spellcheck="false" id=""
+                        style="text-align: center">
+                </div>
+                <div>
+                    <label for=""> بدابة الاشتراك</label>
+                    <input type="date" name="subscriptionStart" class="form-control" spellcheck="false" id=""
+                        style="text-align: center">
+                </div>
             </div>
 
 

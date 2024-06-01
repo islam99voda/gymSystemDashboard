@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\WinnerController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SubscriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,12 +76,11 @@ To follow best practices and adhere to RESTful principles, you should use a POST
 
 
  Route::resource('offers', OfferController::class);
-
  Route::resource('products', ProductController::class);
  Route::resource('champions', ChampionController::class);
  Route::resource('winners', WinnerController::class);
 
-
+ Route::resource('subscriptions', SubscriptionController::class);
 
 
 

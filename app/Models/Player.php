@@ -28,4 +28,9 @@ class Player extends Model
         return $this->belongsToMany(Champion::class, 'winners','player_id','championship_id');
 
     }
+
+    public function subscriptions()
+    {
+        return $this->belongsToMany(Subscription::class, 'player_subscription_offer');
+    }
 }
