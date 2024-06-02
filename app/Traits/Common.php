@@ -9,5 +9,23 @@ Trait Common {
         return $file_name;
     }
 }
+//or 
+protected function uploadFile($newImag, $path)
+    {
+        if (isset($newImag)) {
+            $image_name = uuid_create() . "_" . $newImag->hashName();
+            $newImag->move($path, $image_name);
+            return $path . $image_name;
+        }
+    }
+
+    protected function removeFile($path)
+    {
+
+        if (isset($path) && File::exists(public_path($path))) {
+            File::delete(public_path($path));
+        }
+    }
+
     
 ?>
