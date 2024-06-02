@@ -2,11 +2,18 @@
 namespace App\Traits;
 
 Trait Common {
-    public function uploadFile($file, $path){
-        $file_extension = $file->getClientOriginalExtension();
-        $file_name = time() . '.' . $file_extension;
-        $file->move($path, $file_name);
+    protected function uploadFile($newFile, $path)
+    {
+        $file_name = uuid_create() . "." . $newFile->getClientOriginalExtension();
+        $filePath = $newFile->storeAs($path, $file_name, 'public');
         return $file_name;
+    }
+
+    protected function removeFile($path)
+    {
+        if (isset($path) && File::exists(storage_path(storagePath . $path))) {
+            File::delete(storage_path(storagePath . $path));
+        }
     }
 }
     
